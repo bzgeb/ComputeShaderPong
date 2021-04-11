@@ -1,0 +1,17 @@
+#pragma kernel CSMain
+
+struct Ball
+{
+    float2 position;
+    float2 velocity;
+};
+
+RWTexture2D<float4> _Result;
+RWStructuredBuffer<Ball> _Balls;
+float _PaddlePosition;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    _Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+}
