@@ -15,7 +15,7 @@ public class PongComputeShaderRunner : MonoBehaviour
         _renderTexture.Create();
 
         var main = _computeShader.FindKernel("CSMain");
-        _computeShader.SetTexture(main, "Result", _renderTexture);
+        _computeShader.SetTexture(main, "_Result", _renderTexture);
         _computeShader.GetKernelThreadGroupSizes(main, out uint xGroupSize, out uint yGroupSize, out uint zGroupSize);
         _computeShader.Dispatch(main, _renderTexture.width / (int) xGroupSize, _renderTexture.height / (int) yGroupSize,
             1);
