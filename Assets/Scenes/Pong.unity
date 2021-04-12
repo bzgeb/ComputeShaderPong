@@ -155,6 +155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _computeShader: {fileID: 7200000, guid: 41cbab91e1ea4fd458fe148593061d9b, type: 3}
   _size: 512
+  _backgroundColor: {r: 0.0053497083, g: 0, b: 0.3301887, a: 0}
+  _paddleColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
+  _paddlePosition: {x: 256, y: 10}
+  _paddleSize: {x: 32, y: 4}
+  _paddleSpeed: 100
 --- !u!20 &810162249
 Camera:
   m_ObjectHideFlags: 0

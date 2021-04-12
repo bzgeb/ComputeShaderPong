@@ -8,10 +8,25 @@ struct Ball
 
 RWTexture2D<float4> _Result;
 RWStructuredBuffer<Ball> _Balls;
-float _PaddlePosition;
+float4 _Paddle;
+float4 _PaddleColor;
+float4 _BackgroundColor;
+
+bool IsInsideRect(float2 min, float2 max, float2 p)
+{
+    return p.x > min.x && p.x < max.x && p.y > min.y && p.y < max.y;
+}
 
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    _Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+    //_Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+    if (IsInsideRect(_Paddle.xy - _Paddle.zw, _Paddle.xy + _Paddle.zw, id.xy))
+    {
+        _Result[id.xy] = _PaddleColor;
+    }
+    else
+    {
+        _Result[id.xy] = _BackgroundColor;
+    }
 }
