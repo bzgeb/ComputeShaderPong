@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,6 +160,9 @@ MonoBehaviour:
   _paddlePosition: {x: 256, y: 10}
   _paddleSize: {x: 32, y: 4}
   _paddleSpeed: 100
+  _ballPosition: {x: 256, y: 30}
+  _ballSize: 5
+  _ballColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 0}
 --- !u!20 &810162249
 Camera:
   m_ObjectHideFlags: 0
