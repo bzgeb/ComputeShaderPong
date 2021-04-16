@@ -158,11 +158,12 @@ MonoBehaviour:
   _backgroundColor: {r: 0.0053497083, g: 0, b: 0.3301887, a: 0}
   _paddleColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
   _paddlePosition: {x: 256, y: 10}
-  _paddleSize: {x: 32, y: 4}
-  _paddleSpeed: 100
+  _paddleSize: {x: 32, y: 8}
+  _paddleSpeed: 400
   _ballPosition: {x: 256, y: 30}
   _ballSize: 5
   _ballColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 0}
+  _ballInitialSpeed: 250
 --- !u!20 &810162249
 Camera:
   m_ObjectHideFlags: 0
