@@ -51,10 +51,10 @@ public class PongComputeShaderRunner : MonoBehaviour
 
         _computeShader.SetVector("_PaddleColor", _paddleColor);
 
-        _paddleBuffer = new ComputeBuffer(1, 4 * 4);
+        _paddleBuffer = new ComputeBuffer(1, 4 * sizeof(float));
         _paddleBuffer.SetData(new[] {new Vector4(_paddlePosition.x, _paddlePosition.y, _paddleSize.x, _paddleSize.y)});
 
-        _ballBuffer = new ComputeBuffer(1, 6 * 4);
+        _ballBuffer = new ComputeBuffer(1, 6 * sizeof(float));
         Ball ball = new Ball
         {
             Position = new Vector4(_ballPosition.x, _ballPosition.y, _ballSize, 0f),
